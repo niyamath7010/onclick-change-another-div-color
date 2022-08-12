@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Append1 from "./append1"
+import App2 from './App2'
+import './App.css'
+import App3 from "./App3"
+import App4 from "./App4"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function App(){
+  let change=()=>{}
+  function changeS(callback){
+    change=callback
+  }
+  return(
+    <>
+    <div className="main_container">
+      <div className="first_container">
+        <button className="btn1" onClick={()=>{change('red')}}>CLICK ME</button>
+        <Append1 changeS={changeS} />
+      </div>
+      <App2 />
     </div>
-  );
+    <div className="mmain_continer">
+      <App3 />
+      <App4 />
+    </div>
+    </>
+  )
 }
 
-export default App;
+export default App
